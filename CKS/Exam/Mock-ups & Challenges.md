@@ -1,0 +1,2 @@
+- Mock-ups https://github.com/kodekloudhub/certified-kubernetes-security-specialist-cks-course/tree/main/docs/08-Mock-Exams
+- Challenges https://github.com/kodekloudhub/certified-kubernetes-security-specialist-cks-course/tree/main/docs/09-cks-challenges
