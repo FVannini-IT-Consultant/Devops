@@ -7,7 +7,7 @@
 | SSH hardening                                                                                  | #node      |
 | Obsolete packages and services                                                                 | #node      |
 | Kernel modules                                                                                 | #node      |
-| Disable open ports                                                                             | #node      |
+| [[Disable open ports]]                                                                         | #node      |
 | Minimise IAM roles                                                                             |            |
 | UFW Firewall                                                                                   | #node      |
 | [[Syscalls]]                                                                                   |            |

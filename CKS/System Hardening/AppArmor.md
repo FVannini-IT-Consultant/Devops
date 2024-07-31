@@ -1,9 +1,23 @@
 #container
 It is currently in Beta for K8s
 
-`aa-status` 
-
 Default directory `/etc/apparmor.d/`
+
+```
+aa-status
+aa-genprof
+aa-complain
+aa-enforce
+aa-logprof
+```
+
+### For a program
+`apt-get install apparmor-utils`
+
+e.g. `aa-genprof curl` then F. This will block curl from doing anything
+`aa-logprof` to allow curl again on all or certain actions
+
+### For a container
 
 Load a profile `apparmor_parser -q /etc/apparmor.d/usr.sbin.nginx`
 
@@ -80,6 +94,20 @@ profile custom-nginx flags=(attach_disconnected,mediate_deleted) {
 Example to restrict an additional folder `deny /usr/share/nginx/html/restricted/* rw,` 
 
 Pod definition
+>[!Warning] Annotations are no longer needed as of v1.30
+
+So this
+```
+container.apparmor.security.beta.kubernetes.io/<container_name>: localhost/<profile_name>
+```
+is replaced within the container as
+```yaml
+securityContext:
+  appArmorProfile:
+    type: <profile_type>
+    localhostProfile: <profile_name>
+```
+
 ```
 apiVersion: v1
 kind: Pod
@@ -109,4 +137,6 @@ metadata:
       name: kube-api-access-nqmb2
       readOnly: true
 ```
+
+
 

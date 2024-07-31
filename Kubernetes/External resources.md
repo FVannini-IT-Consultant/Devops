@@ -1,0 +1,4 @@
+- Linux Network Namespace and five of its use cases https://ramesh-sahoo.medium.com/linux-network-namespace-and-five-use-cases-using-various-methods-f45b1ec5db8f
+- kube-ps1: Kubernetes prompt for bash and zsh https://github.com/jonmosco/kube-ps1
+- kubectl-aliases https://github.com/ahmetb/kubectl-aliases?tab=readme-ov-file
+- CKAD + CKA + CKS: The Kubernetes Certification Trilogy https://github.com/Paken/presentations/tree/main/k8scertificationtrilogy

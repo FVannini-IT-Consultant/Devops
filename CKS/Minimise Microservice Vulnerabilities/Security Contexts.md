@@ -21,6 +21,7 @@ securityContext:
     add: ["NET_ADMIN", "SYS_TIME"]
 ```
 
+### Privileged
 Privileged `true` or unprivileged(default) `false` pod. At the level of the pod or container (Not always e.g. sts only work at container)
 > [!warning] It means user 0 (root) in container is mapped to user 0 (root) on host 
 ```yaml
@@ -34,4 +35,10 @@ If `true` (default) `cat /proc/1/status` shows `NoNewPrivs:0`
 ```yaml
 securityContext:
       allowPrivilegeEscalation: false
+```
+
+### ReadOnlyFileSystem
+```yaml
+securityContext:
+  readOnlyRootFilesystem: true
 ```

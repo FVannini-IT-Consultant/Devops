@@ -23,11 +23,16 @@ Many topics in the CKS course have interactive in-browser Killercoda scenarios a
 | 15  | Supply Chain Security - Image Vulnerability Scanning                | o   |
 | 16  | Supply Chain Security - Secure Supply Chain                         | o   |
 | 17  | Runtime Security - Behavioral Analytics at host and container level | o   |
-| 18  | Runtime Security - Immutability of containers at runtime            |     |
-| 19  | Runtime Security - Auditing                                         |     |
-| 20  | System Hardening - Kernel Hardening Tools                           |     |
-| 21  | System Hardening - Reduce Attack Surface                            |     |
+| 18  | Runtime Security - Immutability of containers at runtime            | o   |
+| 19  | Runtime Security - Auditing                                         | o   |
+| 20  | System Hardening - Kernel Hardening Tools                           | o   |
+| 21  | System Hardening - Reduce Attack Surface                            | o   |
 
 - 8 Cluster Hardening - Exercise caution in using ServiceAccounts
 https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/#serviceaccount-admission-controller
 https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/
+
+- 18 Runtime Security - Immutability of containers at runtime
+  emptyDir configuration example https://kubernetes.io/docs/concepts/storage/volumes/#emptydir
+  Configure a Security Context for a Pod or Container https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
+- 19 https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/#log-backend
