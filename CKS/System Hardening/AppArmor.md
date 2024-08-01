@@ -1,7 +1,10 @@
 #container
+Linux kernel security module for access control.
+_Example: Restricts a container's ability to access certain files or network resources._
 It is currently in Beta for K8s
 
 Default directory `/etc/apparmor.d/`
+>[!important] Each node has to have a copy of the profile
 
 ```
 aa-status

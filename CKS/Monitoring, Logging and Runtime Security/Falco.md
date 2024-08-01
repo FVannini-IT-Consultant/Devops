@@ -1,4 +1,6 @@
 #container #pod 
+Runtime security tool for detecting anomalous behavior.
+_Example: Alerts you if a container suddenly starts running unexpected processes._
 
 strace on steroids
 https://falco.org/docs/getting-started/falco-kubernetes-quickstart/

@@ -10,5 +10,5 @@
 | [[Disable open ports]]                                                                         | #node      |
 | Minimise IAM roles                                                                             |            |
 | UFW Firewall                                                                                   | #node      |
-| [[Syscalls]]                                                                                   |            |
+| [[Syscalls]]                                                                                   | #pod       |
 | Tracee                                                                                         |            |

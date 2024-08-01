@@ -1,6 +1,8 @@
 #node #etcd #api-server 
+Security configuration guidelines for Kubernetes. 
+_Example: Provides a checklist to ensure your Kubernetes setup follows industry-standard security practices._
 
-Is a benchmark to provide a security baseline. It works for:
+It is a benchmark to provide a security baseline. It works for:
 - OS
 - Cloud
 - Devices

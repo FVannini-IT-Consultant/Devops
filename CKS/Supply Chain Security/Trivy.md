@@ -1,4 +1,6 @@
 #container
+Vulnerability scanner for containers and Kubernetes. 
+_Example: Scans container images to find known vulnerabilities in software packages._
 
 https://github.com/aquasecurity/trivy#docker
 
