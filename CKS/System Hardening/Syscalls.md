@@ -16,3 +16,9 @@ ps -ef | grep kube-api
 strace -p 2149 -f
 strace -p 2149 -f -cw
 ```
+
+```bash
+strace touch /tmp/error.log
+pidof etcd
+strace -p 3596
+```

@@ -1,6 +1,7 @@
 #container 
 Sandbox for container isolation. 
 _Example: Runs containers with additional security boundaries, preventing them from accessing the host system directly._
+**Needs**: Installation on the host system, configured runtime class in Kubernetes YAML.
 
 Create runtimeclass
 https://kubernetes.io/docs/concepts/containers/runtime-class/#2-create-the-corresponding-runtimeclass-resources

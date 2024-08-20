@@ -1,7 +1,7 @@
-#container 
+#container #pod
 Filters system calls for container security.
 _Example: Blocks a container from making potentially harmful system calls to the kernel._
-
+**Needs**: Seccomp profiles, Kubernetes pod securityContext section in YAML.
 `strace ls /root` shows what [[Syscalls]] are made
 
 Default profile location `/var/lib/kubelet/seccomp/`

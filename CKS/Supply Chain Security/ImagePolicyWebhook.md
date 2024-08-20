@@ -1,9 +1,14 @@
+#admissioncontroller
 *Validating admission plugin*
+
+This is a type of [[Dynamic Admission Control]]
 
 To enable it
 `kube-apiserver --enable-admission-plugins=NodeRestriction,ImagePolicyWebhook`
 
-It **requires** a kubeconfig file and the volume mount
+It **requires** a kubeconfig file and the relative volume mount in the kube-api manifest file.
+>[!info] The kubeconfig file is needed especially if the webhook server is running outside of the Kubernetes cluster or needs to authenticate and communicate securely with the Kubernetes API server.
+>
 ```yaml
 --admission-control-config-file=/etc/kubernetes/policywebhook/admission_config.json
 ...

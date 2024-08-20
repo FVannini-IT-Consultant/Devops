@@ -6,3 +6,4 @@
 | Static Analysis                   | #container                              |
 | [[Kubesec]]                       | #pod #deployment #service               |
 | [[Trivy]]                         | #pod #container #deployment #replicaset |
+| [[ImagePolicyWebhook]]            | #admissioncontroller                    |

@@ -1,3 +1,4 @@
+#admissioncontroller #labels 
 PSA & PSS Pod Security Admission and Standards (Once PSP Pod Security Policy)
 
 Enabled via default
@@ -5,15 +6,15 @@ Enabled via default
 kubectl exec -n kube-system kube-apiserver-controlplane -it -- kube-apiserver -h | grep enable-admission-plugins
 ```
 PSS Profiles: https://kubernetes.io/docs/concepts/security/pod-security-standards/
-- Privileged
-- Baseline
-- Restricted
+- Privileged: Unrestricted policy
+- Baseline: Minimal restrictive policy
+- Restricted: Heavily restricted policy
 PSA Mode: https://kubernetes.io/docs/concepts/security/pod-security-admission/
-- enforce
-- audit
-- warm
+- enforce: Reject pod
+- audit: Record in the audit logs
+- warm: Trigger user-facing warning
 
-PSS/PSA applied to namespaces
+PSS/PSA applied at the namespaces level
 ```bash
 kubectl label ns payroll pod-security.kubernetes.io/enforce=restricted
 

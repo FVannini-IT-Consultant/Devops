@@ -1,6 +1,7 @@
 #node #etcd #api-server 
 Security configuration guidelines for Kubernetes. 
 _Example: Provides a checklist to ensure your Kubernetes setup follows industry-standard security practices._
+**Needs**: Manual or automated checks against Kubernetes configurations, often implemented with auditing tools.
 
 It is a benchmark to provide a security baseline. It works for:
 - OS

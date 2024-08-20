@@ -31,7 +31,6 @@ volumeMounts:
       name: audit
       readOnly: true
 ```
-```
 
 ```yaml
 volumes:
@@ -42,6 +41,7 @@ volumes:
   - hostPath:
       path: /etc/kubernetes/audit-policy/policy.yaml
       type: File
+    name: audit
 ```
 
 policy.yaml example

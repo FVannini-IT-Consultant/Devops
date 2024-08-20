@@ -1,5 +1,5 @@
 From [[Killer-sh - CKS Scenarios]]
-```
+```bash
 docker run --name app1 -d nginx:alpine sleep infinity
 docker exec app1 ps aux
 docker run --name app3 -d nginx:alpine sleep infinity
@@ -9,7 +9,7 @@ docker exec app1 ps aux
 docker exec app3 ps aux
 ```
 
-```
+```bash
 controlplane $ docker exec app2 ps aux
 PID   USER     TIME  COMMAND
     1 root      0:00 sleep infinity

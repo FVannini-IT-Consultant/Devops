@@ -1,7 +1,8 @@
-#container
+#pod #container
 Linux kernel security module for access control.
 _Example: Restricts a container's ability to access certain files or network resources._
-It is currently in Beta for K8s
+~~It is currently in Beta for K8s~~
+**Needs**: AppArmor profiles, Kubernetes pod securityContext section in YAML.
 
 Default directory `/etc/apparmor.d/`
 >[!important] Each node has to have a copy of the profile

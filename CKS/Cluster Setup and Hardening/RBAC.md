@@ -41,3 +41,12 @@ k create rolebinding -n default smoke-view --clusterrole=view --user=smoke
 k create rolebinding -n kube-node-lease smoke-view --clusterrole=view --user=smoke
 k create rolebinding -n kube-public smoke-view --clusterrole=view --user=smoke
 ```
+
+To test a normal user
+```bash
+k auth can-i get pod --user martin -n dev-z
+yes
+
+k auth can-i delete pod --user martin -n dev-z
+no
+```

@@ -1,6 +1,18 @@
+#admissioncontroller
+This is a specific type of [[Admission Controllers]] that allow to extend them to specific needs.
+_Example: Gatekeepers for the cluster, intercepting API requests before they are persisted_
+**Needs:** Webhook server, Service to expose it, Mutating/Validating WebhookConfiguration, TLS Certificates, RBAC
+
+- **Webhook Server**: A service that processes admission requests, typically deployed within the cluster.
+- **Service**: Exposes the webhook server to the Kubernetes API server.
+- **MutatingWebhookConfiguration** and/or **ValidatingWebhookConfiguration**: Kubernetes resources that register the webhook with the API server.
+- **TLS Certificates**: Secures communication between the API server and the webhook server; includes a certificate for the server and a CA bundle for the API server to trust the webhook.
+- **RBAC Policies**: Define permissions for the webhook server to interact with Kubernetes resources as needed.
+- **Configuration Files**: YAML manifests for deploying the webhook server, service, and webhook configurations.
+
+>In addition to [compiled-in admission plugins](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/), admission plugins can be developed as extensions and run as webhooks configured at runtime. This page describes how to build, configure, use, and monitor admission webhooks.
 
 `k create ns webhook-demo`
-
 ```bash
 k create secret tls webhook-server-tls --cert=/root/keys/webhook-server-tls.crt --key=/root/keys/webhook-server-tls.key -n webhook-demo 
 secret/webhook-server-tls created
@@ -30,10 +42,9 @@ webhooks:
     sideEffects: None
 ```
 
-**A deployment and service need to be created for the webhook server** 
+>[!Important] A deployment and service need to be created for the webhook server
 
 Pods that will run
-
 ```yaml
 securityContext:
    runAsNonRoot: false
@@ -41,9 +52,9 @@ securityContext:
 Or no security context at all
 
 Pods that will not run
-
 ```yaml
 securityContext:
     runAsNonRoot: true
     runAsUser: 0
 ```
+

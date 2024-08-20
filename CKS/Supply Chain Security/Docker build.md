@@ -9,6 +9,8 @@ USER appuser
 CMD sh -c 'sleep 1d'
 ```
 
+image: docker.io/library/nginx (Registry . User Account . Image Repository)
+
 We can build as (from within the folder)
  `docker build -t base-image .`
 

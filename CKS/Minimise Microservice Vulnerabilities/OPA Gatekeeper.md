@@ -1,7 +1,8 @@
-#pod
+#pod #admissioncontroller
 OPA Gatekeeper is an implementation of [[OPA]]
 Policy engine for enforcing security policies.
 _Example: Ensures that all deployed containers must have specific security labels_
+**Needs**: OPA policies written in Rego, deployed as a Kubernetes admission controller.
 Provides K8s CRDs Custom Resource Definitions
 
 How to use Gatekeeper https://open-policy-agent.github.io/gatekeeper/website/docs/howto/

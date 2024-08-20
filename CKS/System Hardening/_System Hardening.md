@@ -11,4 +11,4 @@
 | Minimise IAM roles                                                                             |            |
 | UFW Firewall                                                                                   | #node      |
 | [[Syscalls]]                                                                                   | #pod       |
-| Tracee                                                                                         |            |
+| [[Tracee]]                                                                                     |            |
