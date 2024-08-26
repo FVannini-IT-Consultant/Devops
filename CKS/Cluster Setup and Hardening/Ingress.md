@@ -87,3 +87,9 @@ kubectl create ingress world \
 --class=nginx \
 -n world
 ```
+
+Ingress - Annotations and rewrite-target
+https://learn.kodekloud.com/user/courses/certified-kubernetes-security-specialist-cks/module/eac6dac8-4481-4138-96ef-a2135f20e05e/lesson/416fc31d-8436-4fb2-be44-8d29bee19334
+
+Ingress
+https://learn.kodekloud.com/user/courses/certified-kubernetes-security-specialist-cks/module/eac6dac8-4481-4138-96ef-a2135f20e05e/lesson/42cf821c-38ef-4cd5-abce-dfcaf0250c11

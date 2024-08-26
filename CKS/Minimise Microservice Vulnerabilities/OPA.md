@@ -2,7 +2,7 @@ Open Policy Agent
 
 Installation:
 ```bash
-curl -L -o opa https://github.com/open-policy-agent/opa/releases/download/v0.11.0/opa_linux_amd64
+curl -L -o opa https://github.com/open-policy-agent/opa/releases/download/<version>/opa_linux_amd64
 chmod 755 ./opa
 ./opa run -s
 ```

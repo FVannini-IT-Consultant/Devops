@@ -122,3 +122,16 @@ spec:
         except:
           - 1.1.1.1/32
 ```
+
+Useful command to run in Busybox is nc
+
+```bash
+nc -zv db-service 3306
+db-service (10.110.206.8:3306) open
+nc -zv payroll-service 8080
+payroll-service (10.97.194.138:8080) open
+```
+Maybe define another container running
+```bash
+nc -l 3306
+```

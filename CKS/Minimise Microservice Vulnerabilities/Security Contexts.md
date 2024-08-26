@@ -42,3 +42,14 @@ securityContext:
 securityContext:
   readOnlyRootFilesystem: true
 ```
+
+This will probably require empytDir ([generic ephemeral volumes](https://kubernetes.io/docs/concepts/storage/ephemeral-volumes/#generic-ephemeral-volumes))
+```yaml
+volumeMounts:
+    - mountPath: /cache
+      name: cache-volume
+  volumes:
+  - name: cache-volume
+    emptyDir:
+      sizeLimit: 500Mi
+```

@@ -10,37 +10,35 @@ How to use Gatekeeper https://open-policy-agent.github.io/gatekeeper/website/doc
 It is configured to work with validating [[Admission webhooks]]
 
 Install
+https://open-policy-agent.github.io/gatekeeper/website/docs/install
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/open-policy-agent/gatekeeper/master/demo/basic/constraints/all_ns_must_have_gatekeeper.yaml
+kubectl apply -f https://raw.githubusercontent.com/open-policy-agent/gatekeeper/v3.16.3/deploy/gatekeeper.yaml
 ```
 
+Provides Custom Resource Definitions (CRD)
+
 What - Where - How (Constrain template)
+- What -All obj have specific label
+- Where -Enforced on admission controller - `target: admission.k8s.gatekeeper.sh`
+- How -Get labels of obj and check if has the right one - With a rego policy
 
-- What
-All obj have specific label
+From a Constraint Template you then implement Constraints
 
-- Where
-Enforced on admission controller - `target: admission.k8s.gatekeeper.sh`
-
-- How
-Get labels of obj and check if has the right one - With a rego policy
-
-Constraint Template -> Constraint (implementations)
-
+Constraint Template 
 ```yaml
 apiVersion: templates.gatekeeper.sh/v1beta1
 kind: ConstraintTemplate
 metadata:
   name: k8srequiredlabels
 ```
-
+-> Constraint
 ```yaml
 apiVersion: constraint.gatekeeper.sh/v1beta1
 kind: k8srequiredlabels
 metadata:
   name: pod-must-gave-gk
 ```
-
+-> Constraint
 ```yaml
 apiVersion: constraint.gatekeeper.sh/v1beta1
 kind: k8srequiredlabels
@@ -49,17 +47,6 @@ metadata:
 ```
 
 #### Whitelist trusted images
-```yaml
-apiVersion: constraints.gatekeeper.sh/v1beta1
-kind: K8sTrustedImages
-metadata:
-  name: pod-trusted-images
-spec:
-  match:
-    kinds:
-      - apiGroups: [""]
-        kinds: ["Pod"]
-```
 
 ```yaml
 apiVersion: templates.gatekeeper.sh/v1beta1
@@ -84,6 +71,17 @@ spec:
         }
 ```
 
+```yaml
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sTrustedImages
+metadata:
+  name: pod-trusted-images
+spec:
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+```
 
 Resources
 OPA Gatekeeper Library https://open-policy-agent.github.io/gatekeeper-library/website/

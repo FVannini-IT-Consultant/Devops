@@ -63,3 +63,6 @@ From files
 `k create secret  generic sec-a2 -n ns-secure --from-file=/etc/hosts`
 Check contents
 `echo 'MTI3LjAuMC4xIGxvY2FsaG9zdAoKIyBUaGUgZm9sbG93aW5nIGxpbmVzIGFyZSBkZXNpcmFibGUgZm9yIElQdjYgY2FwYWJsZSBob3N0cwo6OjEgaXA2LWxvY2FsaG9zdCBpcDYtbG9vcGJhY2sKZmUwMDo6MCBpcDYtbG9jYWxuZXQKZmYwMDo6MCBpcDYtbWNhc3RwcmVmaXgKZmYwMjo6MSBpcDYtYWxsbm9kZXMKZmYwMjo6MiBpcDYtYWxscm91dGVycwpmZjAyOjozIGlwNi1hbGxob3N0cwoxMjcuMC4wLjEgdWJ1bnR1CjEyNy4wLjAuMSBob3N0MDEKMTI3LjAuMC4xIGNvbnRyb2xwbGFuZQo=' | base64 -d`
+
+Note on Secrets
+https://learn.kodekloud.com/user/courses/certified-kubernetes-security-specialist-cks/module/7431dd03-f5c2-4ebb-b94a-2d35615bbd8c/lesson/cb91290b-c3f5-41a5-af2f-ec2666bf6da6

@@ -36,3 +36,28 @@ https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-accou
   emptyDir configuration example https://kubernetes.io/docs/concepts/storage/volumes/#emptydir
   Configure a Security Context for a Pod or Container https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
 - 19 https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/#log-backend
+
+## Cluster creation
+https://github.com/killer-sh/cks-course-environment/tree/master/cluster-setup/latest
+
+`curl -s https://raw.githubusercontent.com/killer-sh/cks-course-environment/master/cluster-setup/latest/install_master.sh -o install_master.sh`
+
+`curl -s https://raw.githubusercontent.com/killer-sh/cks-course-environment/master/cluster-setup/latest/install_worker.sh -o install_worker.sh`
+
+NIC setup for VBox linked clones
+https://www.freecodecamp.org/news/setting-a-static-ip-in-ubuntu-linux-ip-address-tutorial/
+```
+/etc/netplan/01-netcfg.yaml
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp0s3:
+      dhcp4: no
+      addresses:
+        - 192.168.64.40/24
+      gateway4: 192.168.64.1
+      nameservers:
+        addresses:
+          - 192.168.64.1
+```

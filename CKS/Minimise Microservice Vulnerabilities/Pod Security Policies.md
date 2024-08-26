@@ -1,7 +1,8 @@
 #admissioncontroller #labels 
 PSA & PSS Pod Security Admission and Standards (Once PSP Pod Security Policy)
+_A way to regulate privileged, runAsUser, CAP_SYS_BOOT, CAP_SYS_TIME, etc._
 
-Enabled via default
+Enabled by default
 ```
 kubectl exec -n kube-system kube-apiserver-controlplane -it -- kube-apiserver -h | grep enable-admission-plugins
 ```
@@ -42,6 +43,8 @@ plugins:
         runtimeClassNames: [] 
         namespaces: [my-namespace] 
 ```
-A way to regulate privileged, runAsUser, CAP_SYS_BOOT, CAP_SYS_TIME, etc.
-
-- Course material https://learn.kodekloud.com/user/courses/certified-kubernetes-security-specialist-cks/module/7431dd03-f5c2-4ebb-b94a-2d35615bbd8c/lesson/a3ca9b49-2589-4497-afb1-213b9c4dc47d
+Which you would enable as
+`--admission-control-config-file=/etc/kubernetes/admission-configuration.yaml
+`
+Understanding Pod Security Policy
+https://learn.kodekloud.com/user/courses/certified-kubernetes-security-specialist-cks/module/7431dd03-f5c2-4ebb-b94a-2d35615bbd8c/lesson/a3ca9b49-2589-4497-afb1-213b9c4dc47d

@@ -1,4 +1,3 @@
-
 ## Autocompletion
 https://kubernetes.io/docs/reference/kubectl/quick-reference/#kubectl-autocomplete
 ### Bash
@@ -11,4 +10,15 @@ echo "source <(kubectl completion bash)" >> ~/.bashrc # add autocomplete permane
 ```bash
 alias k=kubectl
 complete -o default -F __start_kubectl k
+```
+
+## Create resources on the fly
+```bash
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: readonly-user
+  namespace: kubernetes-dashboard
+EOF
 ```

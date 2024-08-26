@@ -1,7 +1,13 @@
 https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/
 
+Prepare a secret passkey
+```
+echo 'this-is-very-sec' | base64
+dGhpcy1pcy12ZXJ5LXNlYwo=
+```
+
 Create encryption configuration file
-`/etc/kubernetes/etcd/ec.yaml`
+`/etc/kubernetes/enc/enc.yaml`
 
 This example ensures:
 - new secrets are encrypted `aesgcm`
@@ -23,16 +29,16 @@ resources:
 
 Modify kube-apiserver tp use the file above by adding
 ```yaml
---encryption-provider-config=/etc/kubernetes/etcd/ec.yaml
+--encryption-provider-config=/etc/kubernetes/enc/enc.yaml
 ...
 volumeMounts:
-    - mountPath: /etc/kubernetes/etcd
-      name: etcd
+    - mountPath: /etc/kubernetes/enc
+      name: enc
       readOnly: true
 ...
 volumes:
   - hostPath:
-      path: /etc/kubernetes/etcd
+      path: /etc/kubernetes/enc
       type: DirectoryOrCreate
-    name: etcd
+    name: enc
 ```
