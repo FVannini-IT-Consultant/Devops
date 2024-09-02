@@ -22,3 +22,5 @@ trivy image --severity CRITICAL kodekloud/webapp-delayed-start
 
 trivy k8s --include-namespaces delta --report summary
 ```
+
+`kubectl run -i --rm trivy --image=aquasec/trivy --command -- sh -c "trivy image nginx:alpine --severity=CRITICAL | grep Total:"`

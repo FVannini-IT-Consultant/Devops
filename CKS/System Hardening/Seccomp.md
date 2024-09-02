@@ -5,11 +5,9 @@ _Example: Blocks a container from making potentially harmful system calls to the
 `strace ls /root` shows what [[Syscalls]] are made
 
 Default profile location `/var/lib/kubelet/seccomp/`
-
 >[!important] Each node has to have a copy of the profile
 
 Example pod seccomp profile
-
 ```yaml
 apiVersion: v1
 kind: Pod
@@ -28,7 +26,6 @@ spec:
 ```
 
 Example audit profile
-
 ```json
 {
     "defaultAction": "SCMP_ACT_LOG"

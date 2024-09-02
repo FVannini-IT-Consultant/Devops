@@ -26,7 +26,6 @@ e.g. `aa-genprof curl` then F. This will block curl from doing anything
 Load a profile `apparmor_parser -q /etc/apparmor.d/usr.sbin.nginx`
 
 Example profile
-
 ```yaml
 #include <tunables/global>
 

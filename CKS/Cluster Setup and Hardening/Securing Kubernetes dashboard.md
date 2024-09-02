@@ -46,3 +46,8 @@ Then use the token in the GUI
 Access dashboard
 ` kubectl -n kubernetes-dashboard port-forward svc/kubernetes-dashboard-kong-proxy 8443:443`
 Where 8443 is to be used in the browser e.g. `https://localhost:8443`
+
+Additional documentation
+https://github.com/kubernetes/dashboard?tab=readme-ov-file
+Arguments for the deployment yaml
+https://github.com/kubernetes/dashboard/blob/master/docs/common/arguments.md

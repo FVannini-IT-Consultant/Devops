@@ -65,3 +65,7 @@ Whereas this retrieves a crt
 ```bash
 k get certificatesigningrequests.certificates.k8s.io/60099@internal.users -o jsonpath='{.status.certificate}' | base64 -d > 60099.crt
 ```
+
+## Check contents of certificates
+
+`openssl x509 --in /etc/kubernetes/pki/ca.crt -text --noout`
