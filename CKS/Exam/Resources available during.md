@@ -8,3 +8,4 @@
 
 - Tracee https://aquasecurity.github.io/tracee/latest/
 - Kube-bench https://aquasecurity.github.io/kube-bench/v0.6.15/
+- Kubesec https://kubesec.io/

@@ -128,7 +128,7 @@ The config cannot be used because the certificate is valid only for internal IP 
 The first thing is to **change the service for the kube-api server** from ClusterIP to NodePort
 
 On the controlplane in fact
-`penssl x509 -in /etc/kubernetes/pki/apiserver.crt --noout --text` 
+`openssl x509 -in /etc/kubernetes/pki/apiserver.crt --noout --text` 
 ```
 ...
 DNS:cks-master, DNS:kubernetes, DNS:kubernetes.default, DNS:kubernetes.default.svc, DNS:kubernetes.default.svc.cluster.local, IP Address:10.96.0.1, IP Address:192.168.64.40

@@ -44,8 +44,25 @@ volumes:
     name: audit
 ```
 
-policy.yaml example
+## Policy
+- Stages:
+	- RequestReceived
+	- ResponseStarted
+	- ResponseComplete
+	- Panic
+- Level:
+	- None
+	- Metadata
+	- Request
+	- RequestResponse
+- Event content:
+	- Resources
+	- Verbs
+	- UserGroups
 
+>[!important] Rule are checked from top to bottom in order
+
+policy.yaml example
 ```yaml
 # /etc/kubernetes/audit/policy.yaml
 apiVersion: audit.k8s.io/v1
@@ -70,7 +87,7 @@ rules:
 - Nothing from get, watch and list
 - Nothing from events
 - Nothing from workers
-- Completer for secrets
+- Complete for secrets
 
 ```yaml
 apiVersion: audit.k8s.io/v1

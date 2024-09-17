@@ -23,6 +23,8 @@ It **requires** a kubeconfig file and the relative volume mount in the kube-api 
  ```
 
 Contents of `admission_config.json`
+>[!Note] "defaultAllow": false will stop pods to run if the webhook service is down
+
 ```json
 {
    "apiVersion": "apiserver.config.k8s.io/v1",

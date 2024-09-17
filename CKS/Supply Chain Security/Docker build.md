@@ -1,3 +1,5 @@
+>[!Note] Only RUN, COPY and ADD will create a new layer
+
 Given this image
 ```
 FROM alpine:3.12.3
@@ -67,4 +69,27 @@ RUN apt-get update && apt-get -y install curl
 ENV URL https://google.com/this-will-fail?secret-token=
 RUN rm /usr/bin/bash
 CMD ["sh", "-c", "curl --head $URL$TOKEN$"]
+```
+
+## Killer-sh example
+
+Multi-stage Docker image
+https://github.com/killer-sh/cks-course-environment/tree/master/course-content/supply-chain-security/image-footprint
+
+```
+# build container stage 1
+FROM ubuntu:20.04
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y golang-go=2:1.13~1ubuntu2
+COPY app.go .
+RUN pwd
+RUN CGO_ENABLED=0 go build app.go
+
+# app container stage 2
+FROM alpine:3.12.0
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup -h /home/appuser
+RUN rm -rf /bin/*
+COPY --from=0 /app /home/appuser/
+USER appuser
+CMD ["/home/appuser/app"]
 ```

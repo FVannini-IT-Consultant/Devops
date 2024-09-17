@@ -43,7 +43,7 @@ which yields
 
 `curl http://localhost:8080` HTTP on 8080
 
-NodeRestriction
+## NodeRestriction
 >[!Note] Enabled by default
 
 https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#noderestriction
@@ -58,4 +58,28 @@ We can't change for example another node's label
 kubectl --kubeconfig=/etc/kubernetes/kubelet.conf label node cks-worker2 test=test
 
 Error from server (Forbidden): nodes "cks-worker2" is forbidden: node "cks-worker1" is not allowed to modify node "cks-worker2"
+```
+
+## TLS min and ciphers
+
+To establish a minimum version of TLS and a suite of ciphers
+
+>[!Note] The arguments and the values are not the same
+>
+
+`etcd.yaml`
+https://etcd.io/docs/v3.5/op-guide/security/
+https://etcd.io/docs/v3.5/op-guide/configuration/
+
+```yaml
+- --cipher-suites=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+- --tls-min-version=TLS1.2
+```
+
+`kube-apiserver.yaml`
+https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/
+
+```yaml
+- --tls-cipher-suites=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+- --tls-min-version=VersionTLS12
 ```

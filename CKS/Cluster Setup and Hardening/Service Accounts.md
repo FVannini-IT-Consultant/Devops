@@ -76,8 +76,8 @@ curl https://10.96.0.1 -k
   "code": 403
 }
 ```
-But in this way we are authenticated
 
+But in this way we are authenticated
 ```bash
 curl https://10.96.0.1 -k -H "Authorization: Bearer $(cat token)"
 {

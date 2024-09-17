@@ -8,8 +8,8 @@
 | TLS                                   | #node                   |
 | [[Certificates]]                      |                         |
 | [[KubeConfig]]                        |                         |
-| [[Accessing the REST API]] API Groups | #api-server             |
-| [[Restrict API Access]]               | #api-server             |
+| [[API Accessing REST]] API Groups | #api-server             |
+| [[API Restrict Access]]               | #api-server             |
 | [[RBAC]]                              | #rbac                   |
 | [[Kubelet security]]                  | #kubelet                |
 | [[Securing Kubernetes dashboard]]     | #kube-dashboard         |
@@ -60,7 +60,7 @@
 | Image Security - [[Docker build]]     | #image                                  |
 | Image Security - [[Private Registry]] | #image                                  |
 | Registries                            | #image                                  |
-| Static Analysis                       | #container                              |
+| [[Static Analysis]]                   | #container                              |
 | [[Kubesec]]                           | #pod #deployment #service               |
 | [[Trivy]]                             | #pod #container #deployment #replicaset |
 | [[ImagePolicyWebhook]]                | #admissioncontroller                    |
@@ -69,4 +69,4 @@
 | Topic            | Tag             |
 | ---------------- | --------------- |
 | [[Audit Policy]] | #pod #nodes     |
-| Falco            | #pod #container |
+| [[Falco]]        | #pod #container |
